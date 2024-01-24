@@ -1,22 +1,14 @@
-import { useState } from 'react';
+import {useState } from 'react';
+import MyName from './Components/Name.jsx';
+import Age from './Components/Age.jsx';
 
-function App () {
-
-const [text, setText ] = useState('INITIAL TEXT');
-
-function changeText () {
-  setText('Changed Text');
+function App (){
+  return (
+    <>
+    <MyName/>
+    <Age/>
+    </>
+  )
 }
 
-return (
-  <>
-    <button onClick={changeText} > Clickv </button>
-    <p>{text}</p>
-  </>
-
-);
-}
-
-export default App
-
-
+export default App;
