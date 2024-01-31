@@ -1,10 +1,10 @@
 
 
-function Goal1(){
+function Goal1(title, content){
     return (
         <>
-            <b>1. Understand React Concepts</b>
-            <p>This will enable me build my own self paced projects as I want them</p>
+            <h1>{title}</h1>
+            <p>{content}</p>
         </>
     );
 }

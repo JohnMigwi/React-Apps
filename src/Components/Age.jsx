@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 function Age () {
-    const [age, setAge] = useState('23');
+    const [age] = useState('23');
 
 
     return (

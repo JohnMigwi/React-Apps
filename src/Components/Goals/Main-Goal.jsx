@@ -1,14 +1,13 @@
 import Goal1 from "./goal1";
-import Goal2 from "./goal2";
 
-function MainGoal (){
+function MainGoal ({props}){
 const maingoal = <h2>This are my 2 main goals from this book</h2>
 
     return(
         <>
         {maingoal}
-        <Goal1/>
-        <Goal2/>
+        <Goal1 title="Learn and Understand React Components" content="Undersatanding coding structure"/>
+        <Goal1 title="Build Products" content="Success as a result of putting in the work"/>
         </>
 
     );
