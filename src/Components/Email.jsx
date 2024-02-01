@@ -1,15 +1,20 @@
+import { useState } from "react";
 import React from "react";
-function Email(){
-  let errorMessage = " ";
 
+
+function Email(){
+  const [errorMessage, setErrorMessage] = useState('');
     function evaluateEmail(event){
+        console.log("Hello you are working")
         const enteredEmail = event.target.value;
         if (enteredEmail.trim() === '' || !enteredEmail.includes('@')){
-            errorMessage = "Entered email is invalid";
+            setErrorMessage ("Entered email is invalid");
         } else {
-        errorMessage = "Valid";
+        setErrorMessage ('');
       }
     }
+
+    
 return (
     <>
      <div>
@@ -20,5 +25,6 @@ return (
     </>
   );
 };
+
 
 export default Email;
