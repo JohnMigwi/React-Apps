@@ -3,7 +3,8 @@ import { useState } from "react";
 function Add (){
     const [firstNumber, setFirstNumber] = useState('');
     const [secondNumber, setSecondNumber] = useState('');
-    const [result, setResult] = useState ('');
+    const [result, setResult] = useState(0);
+
 
 
     function handlefirstNumber(event){
@@ -14,26 +15,16 @@ function Add (){
         setSecondNumber(event.target.value);
     };
 
-    function logic (){
-        const sum= Number(firstNumber) + Number (secondNumber);
-        setResult(sum);
-        setTimeout (()=>{
-            setResult ('');
-            setFirstNumber ('');
-            setSecondNumber (' ');
-        },3000);
-    };
-
+    setResult( Number(firstNumber) + Number (secondNumber));
+    
     return(
         <>
-        <input type="text" value={firstNumber} onChange={handlefirstNumber} />
-        <input type="text" value={secondNumber} onChange={handleSecondNumber}/>
-        <button onClick={logic}>Add</button>
-            <p>Result: {result}</p>
+        <div>
+        <input type="text" value={firstNumber} onChange={handlefirstNumber} /> + 
+          <input type="text" value={secondNumber} onChange={handleSecondNumber}/> = {result}  
+        </div>  
         </>
     );
 
 };
-
-
 export default Add;
