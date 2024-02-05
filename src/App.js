@@ -1,4 +1,4 @@
-import Email from './Components/Email.jsx';
+import Test from './Components/Email.jsx';
 import MyName from './Components/Name.jsx';
 import Age from './Components/Age.jsx';
 import MainGoal from './Components/Goals/Main-Goal.jsx';
@@ -14,6 +14,7 @@ function App (){
     <Age/>
     <MainGoal/>
     <CalcLogic/>
+    <Test/>
     </>
   )
 }
