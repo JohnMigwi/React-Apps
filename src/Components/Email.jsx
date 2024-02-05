@@ -1,30 +1,24 @@
 import { useState } from "react";
-import React from "react";
 
+function Test () {
+  const [ email, setEmail] = useState('');
+  
+  function emailHandler(event){
+    setEmail(event.target.value);
+  };
+  function clearEmail(){
+    setEmail ('');
+  };
 
-function Email(){
-  const [errorMessage, setErrorMessage] = useState('');
-    function evaluateEmail(event){
-        console.log("Hello you are working")
-        const enteredEmail = event.target.value;
-        if (enteredEmail.trim() === '' || !enteredEmail.includes('@')){
-            setErrorMessage ("Entered email is invalid");
-        } else {
-        setErrorMessage ('');
-      }
-    }
-
-    
-return (
+  return (
     <>
-     <div>
-        <input type="email" placeholder="Enter your email" onBlur={evaluateEmail}/>
-        <p>{errorMessage}</p>
-     </div>
-     
+    <input type="email" placeholder="Enter Email" value={email} onChange={emailHandler}/>
+    <button onClick={clearEmail}>reset</button>
+    
     </>
+
   );
 };
 
 
-export default Email;
+export default Test;
