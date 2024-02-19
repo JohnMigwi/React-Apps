@@ -1,20 +1,31 @@
-import { useState } from 'react';
-function Test() {
- const [showTerms, setShowTerms] = useState(false);
- function showTermsSummaryHandler() {
- setShowTerms(true);
+import {useState} from "react";
+
+function Email (){
+ const [text, setText] = useState(" ");
+ const [valid, setValid] = useState(false);
+
+ function emailHandle(event){
+    setText(event.target.value);
  }
- let paragraphText = '';
- if (showTerms) {
- paragraphText = 'By continuing, you accept that we will not indemnify  you for any damage or harm caused by our products.';
- }
- return (
- <section>
- <button onClick={showTermsSummaryHandler}>Show Terms of Use 
-Summary</button>
- <p>{paragraphText}</p>
- </section>
- );
+
+function sendingForm(event){
+    event.preventDefault();
+    const check = text.includes("@");
+    setValid(!check)
 }
 
-export default Test;
+    return (
+        <>
+        <section>
+        <input type="email" placeholder="Your Email" onChange={emailHandle}/>
+        <button onClick={sendingForm}>submit</button>
+        <p>{valid}</p>
+        </section>
+        
+        </>
+    );
+
+};
+
+
+export default Email;
