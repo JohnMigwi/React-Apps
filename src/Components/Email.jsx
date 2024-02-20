@@ -1,31 +1,34 @@
-import {useState} from "react";
+import {useState, useRef} from "react";
 
 function Email (){
- const [text, setText] = useState(" ");
- const [valid, setValid] = useState(false);
+    const [counter, setCounter] = useState(0);
+    const counter2 = useRef(1);
 
- function emailHandle(event){
-    setText(event.target.value);
- }
 
-function sendingForm(event){
-    event.preventDefault();
-    const check = text.includes("@");
-    setValid(!check)
-}
+    function handleCount(){
+        setCounter(counter => counter + 1);
+        counter2.current +=1;
+        
+    };
 
+    function handleDecrease(){
+        setCounter(prevCounter => prevCounter - 1);
+        counter2.current -=1;
+    };
+ 
     return (
         <>
-        <section>
-        <input type="email" placeholder="Your Email" onChange={emailHandle}/>
-        <button onClick={sendingForm}>submit</button>
-        <p>{valid}</p>
-        </section>
+         <div>
+            <button onClick={handleCount}>Increase</button>
+             <ul>
+                <li>Counter :{counter}</li>
+                <li>Counter :{counter2.current}</li>
+             </ul>
+             <button onClick={handleDecrease}>Decrease</button>
+         </div>
         
         </>
     );
 
 };
-
-
 export default Email;
