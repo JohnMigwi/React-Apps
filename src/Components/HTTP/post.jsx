@@ -42,24 +42,33 @@ useEffect( ()=>{
   handleFetch();
 }, [])
 
-  return (
-    <div>
-        <input type='text' value={enteredText} onChange={handleChange}/>
-        <button onClick={handleAdding}>Post</button>
-        <ol>{list.map( (list,id) =>(
-            <li key={id}>{list}</li>
-        ))}</ol>
-        <div>
-            <h2>Data From server</h2>
-            <ul>{posts.map((post, index) =>(
-                <li key={index}>
-                    <h2>{post.title}</h2>
-                    <p>{post.body}</p>
-                </li>
-            ))}</ul>
-        </div>
+return (
+    <div className="container mx-auto p-4">
+      <div className="mb-4">
+        <input type="text" value={enteredText} onChange={handleChange} className="border border-gray-300 p-2 rounded-md mr-2" />
+        <button onClick={handleAdding} className="bg-blue-500 text-white p-2 rounded-md">Post</button>
+      </div>
+      <div>
+        <h2 className="text-lg font-semibold mb-2">Entered Text List</h2>
+        <ol className="list-decimal pl-4">
+          {list.map((item, id) => (
+            <li key={id} className="mb-1">{item}</li>
+          ))}
+        </ol>
+      </div>
+      <div className="mt-8">
+        <h2 className="text-lg font-semibold mb-2">Data From Server</h2>
+        <ul>
+          {posts.map((post, index) => (
+            <li key={index} className="border-b border-gray-300 py-4">
+              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+              <p className="text-gray-700">{post.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Post;
