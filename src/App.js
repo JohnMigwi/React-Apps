@@ -1,9 +1,9 @@
-import Trial from "./Components/Goals/trial";
+import Post from "./Components/HTTP/post";
 
 function App (){
   return (
     <>
-    <Trial/>
+     <Post/>
     </>
   )
 }
