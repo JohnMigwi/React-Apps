@@ -37,11 +37,14 @@ async function handleFetch() {
     const response = await blogs.json();
     console.log(response);
     setPosts(response);
+    
 }
 
 useEffect( ()=>{
   handleFetch();
-}, [])
+
+  
+}, []);
 
 return (
     <div className="container mx-auto p-4">
