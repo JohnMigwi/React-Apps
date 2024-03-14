@@ -7,12 +7,13 @@ const [fetchData, setFetchData] = useState([]);
 const [nextPageNumber, setNextPageNumber] = useState(1);
    
     useEffect(()=>{
-        async function fetchNextData(){
-            const data = await fetch(`https://randomuser.me/api?page=${nextPageNumber}`);
+        async function fetchNextData(pageNumber = 1 ){
+            const data = await fetch(`https://randomuser.me/api?page=${pageNumber}`);
             const response = await data.json();
             setFetchData(response.results);
+            setNextPageNumber(nextPageNumber +1)
         }
-        fetchNextData();
+        fetchNextData(nextPageNumber);
     },[])
 
 //?page=2
@@ -20,7 +21,6 @@ const [nextPageNumber, setNextPageNumber] = useState(1);
 const handleNextPage = () => {
     setNextPageNumber(nextPageNumber + 1);
 };
-
   return (
     <div>
         <ul>

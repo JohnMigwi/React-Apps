@@ -1,5 +1,7 @@
 // import Post from "./Components/HTTP/post";
-import Pagination from "./Components/HTTP/pagination";
+// import Pagination from "./Components/HTTP/pagination";
+
+import Parent from "./Optimazation/Parent";
 
 
 
@@ -7,8 +9,7 @@ import Pagination from "./Components/HTTP/pagination";
 function App (){
   return (
     <>
-     <Pagination/>
-     
+     <Parent/>
     </>
   )
 }
