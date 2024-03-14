@@ -35,6 +35,7 @@ function handleAdding(){
 async function handleFetch() {
     const blogs= await fetch('https://jsonplaceholder.typicode.com/posts');
     const response = await blogs.json();
+    console.log(response);
     setPosts(response);
 }
 
