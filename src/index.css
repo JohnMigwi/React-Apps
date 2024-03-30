@@ -24,3 +24,39 @@ code {
 #Nestedchild{
   background-color: blue;
 }
+#fans{
+  background-color: black;
+}
+.container{
+  height: 100px;
+  width: 100%;
+  position: relative;
+  background-color:black;
+  display: flex;
+}
+#text{
+  color: white;
+}
+.Home{
+  padding: 0 15px;
+}
+
+.About{
+  position: absolute;
+  top: 0;
+  display: flex;
+  right: 40%;
+  padding: 0 15px;
+  align-items: flex-end;
+  margin-right: auto;
+  display: flex;
+}
+
+.Logout{
+  position: absolute;
+  right: 2%;
+  display: flex;
+  padding: 0 15px;
+}
+
+
